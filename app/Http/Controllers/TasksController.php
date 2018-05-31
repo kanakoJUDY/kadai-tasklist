@@ -46,7 +46,7 @@ class TasksController extends Controller
     {
           $this->validate($request, [
               'title' => 'required|max:191',  
-            'content' => 'required|max:191',
+            'content' => 'required|max:10',
             ]);
          
         $task = new Task;
@@ -98,7 +98,7 @@ class TasksController extends Controller
     {
         $this->validate($request, [
               'title' => 'required|max:191',  
-            'content' => 'required|max:191',
+            'content' => 'required|max:10',
         ]);
         $task = Task::find($id);
         $task->title = $request->title;
